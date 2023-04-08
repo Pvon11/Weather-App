@@ -5,13 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <title>Weather App</title>
 </head>
 
 <body>
-    <!-- unfortunately not able to submit on time will do a resubmit -->
-    <!-- at a later time -->
+    <div class="wrapper">
 
+        <div class="main-title">
+            <h1>Weather App</h1>
+        </div>
+        <div class="search-button">
+            <input type="search" placeholder="Enter City Here" id="findCity">
+            <button id="submitButton">Search</button>
+        </div>
+
+        <div class="selected-city">
+            <h2 class="displaySelectedCity"></h2>
+        </div>
+
+        <div class="todays-weather">
+            <div class="weather-info">
+                <p class="date"></p>
+                <img id="img"><img>
+                <p id="temp"></p>
+                <p id="wind"></p>
+                <p id="humidity"></p>
+            </div>
+        </div>
+        <section class="five-day-forecast">
+            <h2 class="container-label week">Five Day Forecast</h2>
+            <div class="forecast-card flex"></div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="assets/index.js"></script>
 </body>
 
 </html>

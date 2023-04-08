@@ -1,0 +1,31 @@
+* {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.main-title {
+  align-items: center;
+  display: flex;
+  font-size: xx-large;
+  justify-content: center;
+}
+
+.todays-weather {
+  background-color: beige;
+  border: 6px solid black;
+  text-align: center;
+  display: block;
+  color: darkblue;
+  padding: 5px;
+}
+
+.five-day-forecast {
+  background-color: beige;
+  border: 6px solid black;
+  text-align: center;
+  display: flex;
+  color: darkblue;
+  padding: 0;
+
+  width: 500px;
+  height: 300px;
+}
