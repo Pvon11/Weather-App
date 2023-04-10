@@ -11,7 +11,7 @@
 
 .todays-weather {
   background-color: beige;
-  border: 6px solid black;
+  border: 5px solid black;
   text-align: center;
   display: block;
   color: darkblue;
@@ -20,12 +20,21 @@
 
 .five-day-forecast {
   background-color: beige;
-  border: 6px solid black;
+  border: 5px solid black;
   text-align: center;
   display: flex;
   color: darkblue;
   padding: 0;
+  float: left;
 
-  width: 500px;
+  width: 499px;
   height: 300px;
+}
+
+#submitButton {
+  font-size: xx-large;
+}
+
+#findCity {
+  font-size: xx-large;
 }
