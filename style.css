@@ -38,3 +38,16 @@
 #findCity {
   font-size: xx-large;
 }
+
+.date0 {
+  padding: 5px;
+}
+#temp0 {
+  padding: 5px;
+}
+#wind00 {
+  padding: 5px;
+}
+#humidity0 {
+  padding: 5px;
+}

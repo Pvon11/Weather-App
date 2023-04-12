@@ -11,18 +11,7 @@ var fiveDay = $(".five-day-forecast");
 function weatherForecast(event) {
   event.preventDefault();
   getCity(city.val());
-  // selectedSearchCity.textContent = "City: " + city.val;
 }
-// get the weather url with api key
-// function fetchAPI() {
-//   var weatherUrl = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
-//   fetch(weatherUrl).then(function (response) {
-//     if (!response.ok) {
-//       throw response.json();
-//     }
-//     return response.json();
-//   });
-// }
 
 function getCity(cityName) {
   var weatherUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
@@ -36,7 +25,7 @@ function getCity(cityName) {
       var lat = data[0].lat;
       var lon = data[0].lon;
 
-      var weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+      var weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
       fetch(weatherUrl)
         .then((response) => {
@@ -45,7 +34,6 @@ function getCity(cityName) {
         .then((data) => {
           console.log(data);
           forecastRender(data);
-          //firstDayRender(data)
         });
     });
 }
@@ -53,15 +41,18 @@ function getCity(cityName) {
 function forecastRender(data) {
   var dayArr = data.list;
   var counter = 0;
-  fiveDay.each(function () {
+  fiveDay.each(function (index, element) {
     var date = dayArr[counter].dt_txt;
-    var temp = dayArr[counter].temp;
+    var temp = dayArr[counter].main.temp_max + " F";
+    var wind = dayArr[counter].wind.speed + " MPH";
+    var humidity = dayArr[counter].main.humidity + " Humidity";
     console.log($(this));
+    console.log(index, element);
     // $(`${$(this)} .date0`).text(date);
     $(this).children(".date0").text(date);
-    $(this).children(".temp0").text(temp);
-    // $(this).children(".date0").text(date);
-    // $(this).children(".date0").text(date);
+    $(this).children("#temp0").text(temp);
+    $(this).children("#wind0").text(wind);
+    $(this).children("#humidity0").text(humidity);
 
     counter += 5;
   });
