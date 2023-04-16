@@ -7,13 +7,34 @@ var humidity = document.querySelector("#humidity");
 var date = document.querySelector(".date");
 var selectedSearchCity = document.querySelector(".selectedSearchedCity");
 var fiveDay = $(".five-day-forecast");
-
-function weatherForecast(event) {
+var date = function weatherForecast(event) {
   event.preventDefault();
   getCity(city.val());
-}
+};
 
-function getCity(cityName) {
+var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
+console.log(storedCities);
+
+function writeSavedCityButtons() {
+  $.each(storedCities, function (index, element) {
+    console.log(element);
+    $("#savedCities").append(`<button>${element}</button>`);
+  });
+}
+writeSavedCityButtons();
+
+function getCity(event) {
+  event.preventDefault();
+
+  let cityName;
+
+  event.target.id === "submitButton"
+    ? (cityName = $("#findCity").val())
+    : (cityName = event.target.innerText);
+
+  storedCities.push(cityName);
+  localStorage.setItem("cities", JSON.stringify(storedCities));
+
   var weatherUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
   fetch(weatherUrl)
     .then(function (response) {
@@ -36,6 +57,7 @@ function getCity(cityName) {
           forecastRender(data);
         });
     });
+  $("#savedCities").empty();
 }
 
 function forecastRender(data) {
@@ -43,19 +65,28 @@ function forecastRender(data) {
   var counter = 0;
   fiveDay.each(function (index, element) {
     var date = dayArr[counter].dt_txt;
-    var temp = dayArr[counter].main.temp_max + " F";
+    date = dayjs(date).format("MM/DD/YYYY");
+    // var iconUrl = dayArr[counter].iconUrl;
+    var iconurl =
+      "http://openweathermap.org/img/w/" +
+      dayArr[counter].weather[0].icon +
+      ".png";
+    var temp = dayArr[counter].main.temp_max + "℉";
     var wind = dayArr[counter].wind.speed + " MPH";
-    var humidity = dayArr[counter].main.humidity + " Humidity";
+    var humidity = dayArr[counter].main.humidity + " % Humidity";
     console.log($(this));
     console.log(index, element);
-    // $(`${$(this)} .date0`).text(date);
+
     $(this).children(".date0").text(date);
     $(this).children("#temp0").text(temp);
     $(this).children("#wind0").text(wind);
     $(this).children("#humidity0").text(humidity);
+    $(this).children("#img0").attr("src", iconurl);
 
     counter += 5;
   });
+  writeSavedCityButtons();
 }
 
-$("#submitButton").on("click", weatherForecast);
+$("#submitButton").on("click", getCity);
+$("#savedCities").on("click", getCity);

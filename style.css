@@ -9,6 +9,10 @@
   justify-content: center;
 }
 
+.search-button {
+  text-align: center;
+}
+
 .todays-weather {
   background-color: beige;
   border: 5px solid black;
@@ -31,6 +35,11 @@
   height: 300px;
 }
 
+#savedCities {
+  font-size: x-large;
+  text-align: center;
+}
+
 #submitButton {
   font-size: xx-large;
 }
@@ -50,4 +59,9 @@
 }
 #humidity0 {
   padding: 5px;
+}
+#img0 {
+  padding: 5px;
+  height: 50px;
+  width: 50px;
 }
