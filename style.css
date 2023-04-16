@@ -13,15 +13,6 @@
   text-align: center;
 }
 
-.todays-weather {
-  background-color: beige;
-  border: 5px solid black;
-  text-align: center;
-  display: block;
-  color: darkblue;
-  padding: 5px;
-}
-
 .five-day-forecast {
   background-color: beige;
   border: 5px solid black;

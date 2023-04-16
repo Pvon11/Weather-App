@@ -2,10 +2,11 @@
 
 ## Description
 
-My task for this week 6 assignment was to make a weather app that can run a 5 day forecast. once a city has been selected, a button appears so you can go back and see your local storage. Once your city is selected, data will be called back using openweather 5 day API. the documentation on the website was beneficial.
+My task for this week 6 assignment was to make a weather app that can run a 5 day forecast. once a city has been selected, a button appears so you can go back and see your local storage. Once your city is selected, data will be called back using openweather 5 day API. the documentation on their website allowed me to utilize thier data. A lot of logic is used by jquery and there is also standard HTML and CSS. This project was a lot of fun.
 
 
 ## Website Photo
-
+![computer](assets/img/pvon11.github.io%20(3).png)
 
 ## Link to Website
+[Link](https://pvon11.github.io/Weather-App/)
