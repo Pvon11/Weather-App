@@ -1,58 +1,99 @@
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: "Roboto Condensed", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .main-title {
-  align-items: center;
   display: flex;
-  font-size: xx-large;
   justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
 }
 
 .search-button {
-  text-align: center;
-}
-
-.five-day-forecast {
-  background-color: beige;
-  border: 5px solid black;
-  text-align: center;
   display: flex;
-  color: darkblue;
-  padding: 0;
-  float: left;
-
-  width: 499px;
-  height: 300px;
-}
-
-#savedCities {
-  font-size: x-large;
-  text-align: center;
-}
-
-#submitButton {
-  font-size: xx-large;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 #findCity {
-  font-size: xx-large;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#submitButton {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: #001e3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#savedCities {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#savedCities button {
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  background-color: #001e3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#savedCities button:hover {
+  background-color: #003c78;
+}
+.selected-city {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.five-day-forecast {
+  background-color: #e8e8e8;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  color: #000000;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.five-day-forecast p {
+  margin-bottom: 10px;
 }
 
 .date0 {
   padding: 5px;
+  font-weight: bold;
 }
-#temp0 {
-  padding: 5px;
-}
-#wind00 {
-  padding: 5px;
-}
-#humidity0 {
-  padding: 5px;
-}
+
 #img0 {
-  padding: 5px;
-  height: 50px;
   width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
 }
