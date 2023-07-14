@@ -6,7 +6,7 @@ My task for this week 6 assignment was to make a weather app that can run a 5 da
 
 
 ## Website Photo
-![computer](assets/img/pvon11.github.io%20(3).png)
+![computer](assets/img/pvon11.github.io%20(4).png)
 
 ## Link to Website
 [Link](https://pvon11.github.io/Weather-App/)
